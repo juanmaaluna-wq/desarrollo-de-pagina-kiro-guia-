@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planes y Precios - FitZone</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Encabezado -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1><a href="index.html" style="color: #2c5aa0; text-decoration: none;">FitZone</a></h1>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html#inicio">Inicio</a></li>
+                    <li><a href="planes.html">Planes</a></li>
+                    <li><a href="galeria.html">Galería</a></li>
+                    <li><a href="index.html#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <div class="cart-container">
+                    <button id="cartBtn" class="cart-btn">
+                        🛒 <span id="cartCount">0</span>
+                    </button>
+                </div>
+                <a href="login.html" class="btn-secondary">Iniciar Sesión</a>
+                <a href="register.html" class="btn-primary">Registrarse</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección de Planes -->
+    <section class="plans-section">
+        <div class="container">
+            <div class="plans-header">
+                <h1>Elige el Plan Perfecto para Ti</h1>
+                <p>Todos nuestros planes incluyen acceso completo a las instalaciones y el apoyo de nuestro equipo profesional</p>
+            </div>
+
+            <!-- Tabla de Comparación -->
+            <div class="plans-comparison">
+                <div class="plan-column">
+                    <div class="plan-image-large">
+                        <img src="https://cdn.pixabay.com/photo/2017/08/07/14/02/man-2604149_1280.jpg" alt="Plan Básico">
+                    </div>
+                    <div class="plan-header">
+                        <h3>Plan Básico</h3>
+                        <div class="plan-price">
+                            <span class="currency">$</span>
+                            <span class="amount">29</span>
+                            <span class="period">/mes</span>
+                        </div>
+                        <p>Perfecto para comenzar tu journey fitness</p>
+                    </div>
+                    <div class="plan-features">
+                        <ul>
+                            <li class="included">Acceso al gimnasio (6am - 10pm)</li>
+                            <li class="included">Área de cardio completa</li>
+                            <li class="included">Vestuarios y duchas</li>
+                            <li class="included">Casilleros gratuitos</li>
+                            <li class="included">WiFi gratuito</li>
+                            <li class="not-included">Clases grupales</li>
+                            <li class="not-included">Entrenador personal</li>
+                            <li class="not-included">Área de pesas libre</li>
+                        </ul>
+                    </div>
+                    <button class="btn-plan btn-cart" data-plan="basico" data-price="29" data-name="Plan Básico">Agregar al Carrito</button>
+                </div>
+
+                <div class="plan-column featured">
+                    <div class="popular-badge">Más Popular</div>
+                    <div class="plan-image-large">
+                        <img src="https://cdn.pixabay.com/photo/2016/11/19/12/43/barbell-1839086_1280.jpg" alt="Plan Premium">
+                    </div>
+                    <div class="plan-header">
+                        <h3>Plan Premium</h3>
+                        <div class="plan-price">
+                            <span class="currency">$</span>
+                            <span class="amount">49</span>
+                            <span class="period">/mes</span>
+                        </div>
+                        <p>La opción más completa para resultados óptimos</p>
+                    </div>
+                    <div class="plan-features">
+                        <ul>
+                            <li class="included">Todo del Plan Básico</li>
+                            <li class="included">Clases grupales ilimitadas</li>
+                            <li class="included">2 sesiones de entrenador personal</li>
+                            <li class="included">Área de pesas libre</li>
+                            <li class="included">Zona funcional</li>
+                            <li class="included">Evaluación física inicial</li>
+                            <li class="included">Plan nutricional básico</li>
+                            <li class="not-included">Acceso 24/7</li>
+                        </ul>
+                    </div>
+                    <button class="btn-plan btn-featured btn-cart" data-plan="premium" data-price="49" data-name="Plan Premium">Agregar al Carrito</button>
+                </div>
+
+                <div class="plan-column">
+                    <div class="plan-image-large">
+                        <img src="https://cdn.pixabay.com/photo/2017/08/07/14/02/people-2604149_1280.jpg" alt="Plan Elite">
+                    </div>
+                    <div class="plan-header">
+                        <h3>Plan Elite</h3>
+                        <div class="plan-price">
+                            <span class="currency">$</span>
+                            <span class="amount">79</span>
+                            <span class="period">/mes</span>
+                        </div>
+                        <p>Experiencia premium con atención personalizada</p>
+                    </div>
+                    <div class="plan-features">
+                        <ul>
+                            <li class="included">Todo del Plan Premium</li>
+                            <li class="included">Entrenador personal ilimitado</li>
+                            <li class="included">Consultas con nutricionista</li>
+                            <li class="included">Acceso 24/7</li>
+                            <li class="included">Área VIP exclusiva</li>
+                            <li class="included">Masajes deportivos (2/mes)</li>
+                            <li class="included">Invitado gratuito (1/semana)</li>
+                            <li class="included">Estacionamiento reservado</li>
+                        </ul>
+                    </div>
+                    <button class="btn-plan btn-cart" data-plan="elite" data-price="79" data-name="Plan Elite">Agregar al Carrito</button>
+                </div>
+            </div>
+
+            <!-- Opciones de Duración -->
+            <div class="duration-options">
+                <h2>Opciones de Duración</h2>
+                <div class="duration-grid">
+                    <div class="duration-card">
+                        <h4>Mensual</h4>
+                        <p>Flexibilidad total</p>
+                        <div class="discount">Precio regular</div>
+                    </div>
+                    <div class="duration-card popular">
+                        <h4>Trimestral</h4>
+                        <p>3 meses</p>
+                        <div class="discount">10% descuento</div>
+                    </div>
+                    <div class="duration-card">
+                        <h4>Anual</h4>
+                        <p>12 meses</p>
+                        <div class="discount">20% descuento</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Preguntas Frecuentes</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4>¿Puedo cambiar de plan en cualquier momento?</h4>
+                    <p>Sí, puedes actualizar o cambiar tu plan en cualquier momento. Los cambios se aplicarán en tu próximo ciclo de facturación.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>¿Hay período de prueba gratuito?</h4>
+                    <p>Ofrecemos un pase de día gratuito para que conozcas nuestras instalaciones antes de suscribirte.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>¿Qué incluyen las clases grupales?</h4>
+                    <p>Yoga, Pilates, Spinning, Zumba, CrossFit, y más. Consulta nuestro horario de clases actualizado.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>¿Puedo congelar mi membresía?</h4>
+                    <p>Sí, puedes congelar tu membresía por razones médicas o viajes por hasta 3 meses al año.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>FitZone</h3>
+                    <p>Tu gimnasio de confianza desde 2020</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p>📍 Calle Principal 123</p>
+                    <p>📞 (555) 123-4567</p>
+                    <p>✉️ info@fitzone.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="#">Facebook</a>
+                        <a href="#">Instagram</a>
+                        <a href="#">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 FitZone. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Modal del Carrito -->
+    <div id="cartModal" class="cart-modal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3>Carrito de Compras</h3>
+                <span class="cart-close">&times;</span>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <!-- Los items se agregan dinámicamente -->
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <strong>Total: $<span id="cartTotal">0</span></strong>
+                </div>
+                <div class="cart-actions">
+                    <button class="btn-secondary" id="clearCart">Limpiar Carrito</button>
+                    <button class="btn-primary" id="checkout">Proceder al Pago</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="cart.js"></script>
+</body>
+</html>

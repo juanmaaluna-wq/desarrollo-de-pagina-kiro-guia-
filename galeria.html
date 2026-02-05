@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería - FitZone</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Encabezado -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1><a href="index.html" style="color: #2c5aa0; text-decoration: none;">FitZone</a></h1>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html#inicio">Inicio</a></li>
+                    <li><a href="planes.html">Planes</a></li>
+                    <li><a href="galeria.html">Galería</a></li>
+                    <li><a href="index.html#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <div class="cart-container">
+                    <button id="cartBtn" class="cart-btn">
+                        🛒 <span id="cartCount">0</span>
+                    </button>
+                </div>
+                <a href="login.html" class="btn-secondary">Iniciar Sesión</a>
+                <a href="register.html" class="btn-primary">Registrarse</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección de Galería -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="gallery-header">
+                <h1>Nuestras Instalaciones</h1>
+                <p>Descubre el ambiente motivador y las instalaciones de primera calidad que te esperan en FitZone</p>
+            </div>
+
+            <!-- Filtros de Galería -->
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">Todas</button>
+                <button class="filter-btn" data-filter="equipment">Equipos</button>
+                <button class="filter-btn" data-filter="classes">Clases</button>
+                <button class="filter-btn" data-filter="facilities">Instalaciones</button>
+                <button class="filter-btn" data-filter="events">Eventos</button>
+            </div>
+
+            <!-- Grid de Galería -->
+            <div class="gallery-grid">
+                <!-- Equipos -->
+                <div class="gallery-item" data-category="equipment">
+                    <div class="gallery-image">
+                        <img src="https://cdn.pixabay.com/photo/2017/08/07/14/02/man-2604149_1280.jpg" alt="Área de Cardio">
+                        <div class="gallery-overlay">
+                            <h3>Área de Cardio</h3>
+                            <p>Equipos de última generación para tu entrenamiento cardiovascular</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="equipment">
+                    <div class="gallery-image">
+                        <img src="https://cdn.pixabay.com/photo/2016/11/19/12/43/barbell-1839086_1280.jpg" alt="Zona de Pesas">
+                        <div class="gallery-overlay">
+                            <h3>Zona de Pesas</h3>
+                            <p>Amplia selección de pesas libres y máquinas de fuerza</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="equipment">
+                    <div class="gallery-image">
+                        <img src="https://cdn.pixabay.com/photo/2017/08/07/14/02/people-2604149_1280.jpg" alt="Área Funcional">
+                        <div class="gallery-overlay">
+                            <h3>Área Funcional</h3>
+                            <p>Espacio dedicado para entrenamientos funcionales y CrossFit</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Clases -->
+                <div class="gallery-item" data-category="classes">
+                    <div class="gallery-image">
+                        <img src="https://cdn.pixabay.com/photo/2016/11/19/12/43/yoga-1839820_1280.jpg" alt="Clase de Yoga">
+                        <div class="gallery-overlay">
+                            <h3>Clase de Yoga</h3>
+                            <p>Encuentra tu equilibrio en nuestras clases de yoga</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="classes">
+                    <div class="gallery-image">
+                        <div class="placeholder-image">
+                            <span>Spinning</span>
+                        </div>
+                        <div class="gallery-overlay">
+                            <h3>Spinning</h3>
+                            <p>Clases de spinning con música motivadora</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="classes">
+                    <div class="gallery-image">
+                        <div class="placeholder-image">
+                            <span>Zumba</span>
+                        </div>
+                        <div class="gallery-overlay">
+                            <h3>Zumba</h3>
+                            <p>Baila y ejercítate con nuestras clases de Zumba</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Instalaciones -->
+                <div class="gallery-item" data-category="facilities">
+                    <div class="gallery-image">
+                        <div class="placeholder-image">
+                            <span>Vestuarios</span>
+                        </div>
+                        <div class="gallery-overlay">
+                            <h3>Vestuarios</h3>
+                            <p>Vestuarios amplios y modernos con duchas</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="facilities">
+                    <div class="gallery-image">
+                        <div class="placeholder-image">
+                            <span>Área de Relajación</span>
+                        </div>
+                        <div class="gallery-overlay">
+                            <h3>Área de Relajación</h3>
+                            <p>Espacio para relajarte después del entrenamiento</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="facilities">
+                    <div class="gallery-image">
+                        <div class="placeholder-image">
+                            <span>Recepción</span>
+                        </div>
+                        <div class="gallery-overlay">
+                            <h3>Recepción</h3>
+                            <p>Nuestro equipo te recibe con la mejor atención</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Eventos -->
+                <div class="gallery-item" data-category="events">
+                    <div class="gallery-image">
+                        <div class="placeholder-image">
+                            <span>Competencia Fitness</span>
+                        </div>
+                        <div class="gallery-overlay">
+                            <h3>Competencia Fitness</h3>
+                            <p>Eventos y competencias para toda la comunidad</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="events">
+                    <div class="gallery-image">
+                        <div class="placeholder-image">
+                            <span>Taller Nutricional</span>
+                        </div>
+                        <div class="gallery-overlay">
+                            <h3>Taller Nutricional</h3>
+                            <p>Talleres educativos sobre nutrición y bienestar</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="events">
+                    <div class="gallery-image">
+                        <div class="placeholder-image">
+                            <span>Celebración Aniversario</span>
+                        </div>
+                        <div class="gallery-overlay">
+                            <h3>Celebración Aniversario</h3>
+                            <p>Celebramos juntos nuestros logros y metas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Horarios -->
+    <section class="schedule-section">
+        <div class="container">
+            <h2>Horarios de Clases</h2>
+            <div class="schedule-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Hora</th>
+                            <th>Lunes</th>
+                            <th>Martes</th>
+                            <th>Miércoles</th>
+                            <th>Jueves</th>
+                            <th>Viernes</th>
+                            <th>Sábado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>7:00 AM</td>
+                            <td class="class-yoga">Yoga</td>
+                            <td class="class-cardio">Cardio</td>
+                            <td class="class-yoga">Yoga</td>
+                            <td class="class-cardio">Cardio</td>
+                            <td class="class-yoga">Yoga</td>
+                            <td class="class-spinning">Spinning</td>
+                        </tr>
+                        <tr>
+                            <td>9:00 AM</td>
+                            <td class="class-spinning">Spinning</td>
+                            <td class="class-pilates">Pilates</td>
+                            <td class="class-spinning">Spinning</td>
+                            <td class="class-pilates">Pilates</td>
+                            <td class="class-zumba">Zumba</td>
+                            <td class="class-crossfit">CrossFit</td>
+                        </tr>
+                        <tr>
+                            <td>6:00 PM</td>
+                            <td class="class-crossfit">CrossFit</td>
+                            <td class="class-zumba">Zumba</td>
+                            <td class="class-crossfit">CrossFit</td>
+                            <td class="class-zumba">Zumba</td>
+                            <td class="class-spinning">Spinning</td>
+                            <td class="class-yoga">Yoga</td>
+                        </tr>
+                        <tr>
+                            <td>8:00 PM</td>
+                            <td class="class-pilates">Pilates</td>
+                            <td class="class-yoga">Yoga</td>
+                            <td class="class-pilates">Pilates</td>
+                            <td class="class-yoga">Yoga</td>
+                            <td class="class-cardio">Cardio</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>FitZone</h3>
+                    <p>Tu gimnasio de confianza desde 2020</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p>📍 Calle Principal 123</p>
+                    <p>📞 (555) 123-4567</p>
+                    <p>✉️ info@fitzone.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="#">Facebook</a>
+                        <a href="#">Instagram</a>
+                        <a href="#">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 FitZone. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal del Carrito -->
+    <div id="cartModal" class="cart-modal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3>Carrito de Compras</h3>
+                <span class="cart-close">&times;</span>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <!-- Los items se agregan dinámicamente -->
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <strong>Total: $<span id="cartTotal">0</span></strong>
+                </div>
+                <div class="cart-actions">
+                    <button class="btn-secondary" id="clearCart">Limpiar Carrito</button>
+                    <button class="btn-primary" id="checkout">Proceder al Pago</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="cart.js"></script>
+    <script src="gallery.js"></script>
+</body>
+</html>
