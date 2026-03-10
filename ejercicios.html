@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios - FitZone</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Encabezado -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1><a href="index.html" style="color: #2c5aa0; text-decoration: none;">FitZone</a></h1>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html#inicio">Inicio</a></li>
+                    <li><a href="planes.html">Planes</a></li>
+                    <li><a href="ejercicios.html">Ejercicios</a></li>
+                    <li><a href="tienda.html">Tienda</a></li>
+                    <li><a href="galeria.html">Galería</a></li>
+                    <li><a href="index.html#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <div class="cart-container">
+                    <button id="cartBtn" class="cart-btn">
+                        🛒 <span id="cartCount">0</span>
+                    </button>
+                </div>
+                <a href="login.html" class="btn-secondary">Iniciar Sesión</a>
+                <a href="register.html" class="btn-primary">Registrarse</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección de Ejercicios -->
+    <section class="exercises-section">
+        <div class="container">
+            <div class="exercises-header">
+                <h1>Guía de Ejercicios</h1>
+                <p>Descubre ejercicios efectivos organizados por nivel de dificultad</p>
+            </div>
+
+            <!-- Filtros de Nivel -->
+            <div class="exercise-filters">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="beginner">Principiante</button>
+                <button class="filter-btn" data-filter="intermediate">Intermedio</button>
+                <button class="filter-btn" data-filter="advanced">Avanzado</button>
+            </div>
+
+            <!-- Grid de Ejercicios -->
+            <div class="exercises-grid">
+                <!-- PRINCIPIANTE -->
+                <div class="exercise-card" data-level="beginner">
+                    <div class="exercise-image">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800" alt="Sentadillas">
+                        <span class="level-badge beginner">Principiante</span>
+                    </div>
+                    <div class="exercise-info">
+                        <h3>Sentadillas</h3>
+                        <p class="exercise-description">Ejercicio fundamental para piernas y glúteos. Fortalece cuádriceps, isquiotibiales y core.</p>
+                        <div class="exercise-details">
+                            <span class="detail-item">🎯 Piernas</span>
+                            <span class="detail-item">⏱️ 3 series x 12 reps</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-card" data-level="beginner">
+                    <div class="exercise-image">
+                        <img src="https://images.unsplash.com/photo-1598971639058-fab3c3109a00?w=800" alt="Flexiones de Rodillas">
+                        <span class="level-badge beginner">Principiante</span>
+                    </div>
+                    <div class="exercise-info">
+                        <h3>Flexiones de Rodillas</h3>
+                        <p class="exercise-description">Versión modificada de flexiones, ideal para desarrollar fuerza en pecho y brazos.</p>
+                        <div class="exercise-details">
+                            <span class="detail-item">🎯 Pecho</span>
+                            <span class="detail-item">⏱️ 3 series x 10 reps</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-card" data-level="beginner">
+                    <div class="exercise-image">
+                        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800" alt="Plancha">
+                        <span class="level-badge beginner">Principiante</span>
+                    </div>
+                    <div class="exercise-info">
+                        <h3>Plancha</h3>
+                        <p class="exercise-description">Ejercicio isométrico excelente para fortalecer el core y mejorar la estabilidad.</p>
+                        <div class="exercise-details">
+                            <span class="detail-item">🎯 Core</span>
+                            <span class="detail-item">⏱️ 3 series x 30 seg</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-card" data-level="beginner">
+                    <div class="exercise-image">
+                        <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800" alt="Zancadas">
+                        <span class="level-badge beginner">Principiante</span>
+                    </div>
+                    <div class="exercise-info">
+                        <h3>Zancadas</h3>
+                        <p class="exercise-description">Trabaja piernas de forma unilateral, mejorando equilibrio y fuerza.</p>
+                        <div class="exercise-details">
+                            <span class="detail-item">🎯 Piernas</span>
+                            <span class="detail-item">⏱️ 3 series x 10 reps/lado</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- INTERMEDIO -->
+                <div class="exercise-card" data-level="intermediate">
+                    <div class="exercise-image">
+                        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800" alt="Peso Muerto">
+                        <span class="level-badge intermediate">Intermedio</span>
+                    </div>
+                    <div class="exercise-info">
+                        <h3>Peso Muerto</h3>
+                        <p class="exercise-description">Ejercicio compuesto que trabaja toda la cadena posterior: espalda baja, glúteos e isquiotibiales.</p>
+                        <div class="exercise-details">
+                            <span class="detail-item">🎯 Espalda/Piernas</span>
+                            <span class="detail-item">⏱️ 4 series x 8 reps</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-card" data-level="intermediate">
+                    <div class="exercise-image">
+                        <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=800" alt="Press de Banca">
+                        <span class="level-badge intermediate">Intermedio</span>
+                    </div>
+                    <div class="exercise-info">
+                        <h3>Press de Banca</h3>
+                        <p class="exercise-description">Ejercicio clásico para desarrollar pecho, hombros y tríceps con barra o mancuernas.</p>
+                        <div class="exercise-details">
+                            <span class="detail-item">🎯 Pecho</span>
+                            <span class="detail-item">⏱️ 4 series x 10 reps</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-card" data-level="intermediate">
+                    <div class="exercise-image">
+                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800" alt="Dominadas Asistidas">
+                        <span class="level-badge intermediate">Intermedio</span>
+                    </div>
+                    <div class="exercise-info">
+                        <h3>Dominadas Asistidas</h3>
+                        <p class="exercise-description">Fortalece espalda y bíceps. Usa banda elástica o máquina asistida para apoyo.</p>
+                        <div class="exercise-details">
+                            <span class="detail-item">🎯 Espalda</span>
+                            <span class="detail-item">⏱️ 3 series x 8 reps</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-card" data-level="intermediate">
+                    <div class="exercise-image">
+                        <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=800" alt="Burpees">
+                        <span class="level-badge intermediate">Intermedio</span>
+                    </div>
+                    <div class="exercise-info">
+                        <h3>Burpees</h3>
+                        <p class="exercise-description">Ejercicio de cuerpo completo que combina fuerza y cardio para quemar calorías.</p>
+                        <div class="exercise-details">
+                            <span class="detail-item">🎯 Cuerpo Completo</span>
+                            <span class="detail-item">⏱️ 3 series x 15 reps</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AVANZADO -->
+                <div class="exercise-card" data-level="advanced">
+                    <div class="exercise-image">
+                        <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=800" alt="Muscle Up">
+                        <span class="level-badge advanced">Avanzado</span>
+                    </div>
+                    <div class="exercise-info">
+                        <h3>Muscle Up</h3>
+                        <p class="exercise-description">Movimiento explosivo que combina dominada y fondo en anillas o barra.</p>
+                        <div class="exercise-details">
+                            <span class="detail-item">🎯 Espalda/Pecho</span>
+                            <span class="detail-item">⏱️ 4 series x 5 reps</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-card" data-level="advanced">
+                    <div class="exercise-image">
+                        <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=800" alt="Pistol Squat">
+                        <span class="level-badge advanced">Avanzado</span>
+                    </div>
+                    <div class="exercise-info">
+                        <h3>Pistol Squat</h3>
+                        <p class="exercise-description">Sentadilla a una pierna que requiere fuerza, equilibrio y movilidad excepcionales.</p>
+                        <div class="exercise-details">
+                            <span class="detail-item">🎯 Piernas</span>
+                            <span class="detail-item">⏱️ 3 series x 6 reps/lado</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-card" data-level="advanced">
+                    <div class="exercise-image">
+                        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800" alt="Front Lever">
+                        <span class="level-badge advanced">Avanzado</span>
+                    </div>
+                    <div class="exercise-info">
+                        <h3>Front Lever</h3>
+                        <p class="exercise-description">Ejercicio isométrico avanzado que requiere tremenda fuerza de core y espalda.</p>
+                        <div class="exercise-details">
+                            <span class="detail-item">🎯 Core/Espalda</span>
+                            <span class="detail-item">⏱️ 4 series x 10 seg</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-card" data-level="advanced">
+                    <div class="exercise-image">
+                        <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=800" alt="Handstand Push-ups">
+                        <span class="level-badge advanced">Avanzado</span>
+                    </div>
+                    <div class="exercise-info">
+                        <h3>Handstand Push-ups</h3>
+                        <p class="exercise-description">Flexiones en posición invertida, excelente para hombros y equilibrio.</p>
+                        <div class="exercise-details">
+                            <span class="detail-item">🎯 Hombros</span>
+                            <span class="detail-item">⏱️ 3 series x 8 reps</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Consejos -->
+    <section class="tips-section">
+        <div class="container">
+            <h2>Consejos para tu Entrenamiento</h2>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <div class="tip-icon">🔥</div>
+                    <h4>Calentamiento</h4>
+                    <p>Dedica 5-10 minutos a calentar antes de entrenar para prevenir lesiones y mejorar el rendimiento.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">💧</div>
+                    <h4>Hidratación</h4>
+                    <p>Mantente hidratado antes, durante y después del ejercicio. Bebe al menos 2 litros de agua al día.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">😴</div>
+                    <h4>Descanso</h4>
+                    <p>El músculo crece durante el descanso. Asegúrate de dormir 7-8 horas y dar tiempo de recuperación.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🥗</div>
+                    <h4>Nutrición</h4>
+                    <p>Una dieta balanceada es clave. Consume proteínas, carbohidratos complejos y grasas saludables.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>FitZone</h3>
+                    <p>Tu gimnasio de confianza desde 2020</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p>📍 Calle Principal 123</p>
+                    <p>📞 (555) 123-4567</p>
+                    <p>✉️ info@fitzone.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="#">Facebook</a>
+                        <a href="#">Instagram</a>
+                        <a href="#">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 FitZone. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal del Carrito -->
+    <div id="cartModal" class="cart-modal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3>Carrito de Compras</h3>
+                <span class="cart-close">&times;</span>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <!-- Los items se agregan dinámicamente -->
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <strong>Total: $<span id="cartTotal">0</span></strong>
+                </div>
+                <div class="cart-actions">
+                    <button class="btn-secondary" id="clearCart">Limpiar Carrito</button>
+                    <button class="btn-primary" id="checkout">Proceder al Pago</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="cart.js"></script>
+    <script src="exercises.js"></script>
+    <script src="auth.js"></script>
+</body>
+</html>

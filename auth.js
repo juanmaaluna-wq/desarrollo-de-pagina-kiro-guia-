@@ -1,5 +1,8 @@
 // Funcionalidad para formularios de autenticación
 document.addEventListener('DOMContentLoaded', function() {
+    // Verificar si el usuario ya está logueado
+    checkUserSession();
+    
     // Formulario de login
     const loginForm = document.getElementById('loginForm');
     if (loginForm) {
@@ -21,18 +24,39 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            // Simulación de login
-            showMessage('Iniciando sesión...', 'info');
+            // Intentar iniciar sesión
+            const users = JSON.parse(localStorage.getItem('fitzone_users')) || [];
+            const user = users.find(u => u.email === email && u.password === password);
             
-            setTimeout(() => {
-                // Aquí iría la lógica real de autenticación
-                showMessage('¡Bienvenido de vuelta!', 'success');
+            if (user) {
+                showMessage('Iniciando sesión...', 'info');
                 
-                // Redirigir después del login exitoso
                 setTimeout(() => {
-                    window.location.href = 'index.html';
-                }, 1500);
-            }, 1000);
+                    // Guardar sesión
+                    const sessionData = {
+                        email: user.email,
+                        name: user.firstName + ' ' + user.lastName,
+                        firstName: user.firstName,
+                        loggedIn: true,
+                        loginTime: new Date().toISOString()
+                    };
+                    
+                    if (remember) {
+                        localStorage.setItem('fitzone_session', JSON.stringify(sessionData));
+                    } else {
+                        sessionStorage.setItem('fitzone_session', JSON.stringify(sessionData));
+                    }
+                    
+                    showMessage('¡Bienvenido de vuelta, ' + user.firstName + '!', 'success');
+                    
+                    // Redirigir después del login exitoso
+                    setTimeout(() => {
+                        window.location.href = 'index.html';
+                    }, 1500);
+                }, 1000);
+            } else {
+                showMessage('Email o contraseña incorrectos', 'error');
+            }
         });
     }
     
@@ -76,12 +100,44 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            // Simulación de registro
+            // Verificar si el email ya existe
+            const users = JSON.parse(localStorage.getItem('fitzone_users')) || [];
+            const existingUser = users.find(u => u.email === email);
+            
+            if (existingUser) {
+                showMessage('Este email ya está registrado', 'error');
+                return;
+            }
+            
+            // Registrar nuevo usuario
             showMessage('Creando tu cuenta...', 'info');
             
             setTimeout(() => {
-                // Aquí iría la lógica real de registro
+                const newUser = {
+                    id: Date.now(),
+                    firstName: firstName,
+                    lastName: lastName,
+                    email: email,
+                    phone: phone,
+                    password: password,
+                    registeredDate: new Date().toISOString()
+                };
+                
+                users.push(newUser);
+                localStorage.setItem('fitzone_users', JSON.stringify(users));
+                
                 showMessage('¡Cuenta creada exitosamente! Bienvenido a FitZone', 'success');
+                
+                // Iniciar sesión automáticamente
+                const sessionData = {
+                    email: newUser.email,
+                    name: newUser.firstName + ' ' + newUser.lastName,
+                    firstName: newUser.firstName,
+                    loggedIn: true,
+                    loginTime: new Date().toISOString()
+                };
+                
+                localStorage.setItem('fitzone_session', JSON.stringify(sessionData));
                 
                 // Redirigir después del registro exitoso
                 setTimeout(() => {
@@ -91,6 +147,92 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+// Función para verificar sesión de usuario
+function checkUserSession() {
+    const session = localStorage.getItem('fitzone_session') || sessionStorage.getItem('fitzone_session');
+    
+    if (session) {
+        const userData = JSON.parse(session);
+        updateUIForLoggedInUser(userData);
+    }
+}
+
+// Función para actualizar UI cuando el usuario está logueado
+function updateUIForLoggedInUser(userData) {
+    const authButtons = document.querySelector('.auth-buttons');
+    
+    if (authButtons && !document.getElementById('userMenu')) {
+        // Crear menú de usuario
+        const userMenu = document.createElement('div');
+        userMenu.id = 'userMenu';
+        userMenu.className = 'user-menu';
+        userMenu.innerHTML = `
+            <button class="user-btn">
+                <span class="user-icon">👤</span>
+                <span class="user-name">${userData.firstName}</span>
+            </button>
+            <div class="user-dropdown">
+                <a href="#" class="dropdown-item">Mi Perfil</a>
+                <a href="#" class="dropdown-item">Mis Pedidos</a>
+                <a href="#" class="dropdown-item">Configuración</a>
+                <hr>
+                <a href="#" class="dropdown-item" id="logoutBtn">Cerrar Sesión</a>
+            </div>
+        `;
+        
+        // Reemplazar botones de login/registro con menú de usuario
+        const loginBtn = authButtons.querySelector('a[href="login.html"]');
+        const registerBtn = authButtons.querySelector('a[href="register.html"]');
+        
+        if (loginBtn) loginBtn.style.display = 'none';
+        if (registerBtn) registerBtn.style.display = 'none';
+        
+        // Insertar menú de usuario antes del carrito
+        const cartContainer = authButtons.querySelector('.cart-container');
+        if (cartContainer) {
+            authButtons.insertBefore(userMenu, cartContainer);
+        } else {
+            authButtons.appendChild(userMenu);
+        }
+        
+        // Funcionalidad del menú desplegable
+        const userBtn = userMenu.querySelector('.user-btn');
+        const dropdown = userMenu.querySelector('.user-dropdown');
+        
+        userBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            dropdown.classList.toggle('show');
+        });
+        
+        // Cerrar dropdown al hacer click fuera
+        document.addEventListener('click', function() {
+            dropdown.classList.remove('show');
+        });
+        
+        // Funcionalidad de cerrar sesión
+        const logoutBtn = document.getElementById('logoutBtn');
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                logout();
+            });
+        }
+    }
+}
+
+// Función para cerrar sesión
+function logout() {
+    if (confirm('¿Estás seguro de que quieres cerrar sesión?')) {
+        localStorage.removeItem('fitzone_session');
+        sessionStorage.removeItem('fitzone_session');
+        showMessage('Sesión cerrada exitosamente', 'success');
+        
+        setTimeout(() => {
+            window.location.href = 'index.html';
+        }, 1000);
+    }
+}
 
 // Función para validar email
 function isValidEmail(email) {

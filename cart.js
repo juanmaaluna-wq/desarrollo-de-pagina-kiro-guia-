@@ -55,26 +55,35 @@ class ShoppingCart {
 
     addToCart(event) {
         const button = event.target;
-        const plan = button.getAttribute('data-plan');
+        const itemType = button.getAttribute('data-type') || 'plan'; // 'plan' o 'product'
+        const itemId = button.getAttribute(itemType === 'plan' ? 'data-plan' : 'data-product');
         const price = parseFloat(button.getAttribute('data-price'));
         const name = button.getAttribute('data-name');
 
         // Verificar si el item ya existe
-        const existingItem = this.items.find(item => item.plan === plan);
+        const existingItem = this.items.find(item => item.id === itemId || (item.plan === itemId || item.product === itemId));
         
         if (existingItem) {
             existingItem.quantity += 1;
             this.showMessage('Cantidad actualizada en el carrito', 'success');
         } else {
             const newItem = {
-                id: Date.now(),
-                plan: plan,
+                id: itemId,
                 name: name,
                 price: price,
-                quantity: 1
+                quantity: 1,
+                type: itemType
             };
+            
+            // Agregar identificador específico según el tipo
+            if (itemType === 'plan') {
+                newItem.plan = itemId;
+            } else {
+                newItem.product = itemId;
+            }
+            
             this.items.push(newItem);
-            this.showMessage('Plan agregado al carrito', 'success');
+            this.showMessage(itemType === 'plan' ? 'Plan agregado al carrito' : 'Producto agregado al carrito', 'success');
         }
 
         this.saveCart();
@@ -88,21 +97,28 @@ class ShoppingCart {
         }, 150);
     }
 
-    removeFromCart(id) {
-        this.items = this.items.filter(item => item.id !== id);
+    removeFromCart(itemId) {
+        this.items = this.items.filter(item => {
+            const currentId = item.id || item.plan || item.product;
+            return currentId !== itemId;
+        });
         this.saveCart();
         this.updateCartCount();
         this.renderCartItems();
-        this.showMessage('Plan eliminado del carrito', 'info');
+        this.showMessage('Item eliminado del carrito', 'info');
     }
 
-    updateQuantity(id, newQuantity) {
+    updateQuantity(itemId, newQuantity) {
         if (newQuantity <= 0) {
-            this.removeFromCart(id);
+            this.removeFromCart(itemId);
             return;
         }
 
-        const item = this.items.find(item => item.id === id);
+        const item = this.items.find(item => {
+            const currentId = item.id || item.plan || item.product;
+            return currentId === itemId;
+        });
+        
         if (item) {
             item.quantity = newQuantity;
             this.saveCart();
@@ -158,7 +174,7 @@ class ShoppingCart {
             cartItemsContainer.innerHTML = `
                 <div class="empty-cart">
                     <p>Tu carrito está vacío</p>
-                    <p>¡Agrega algunos planes para comenzar!</p>
+                    <p>¡Agrega algunos planes o productos para comenzar!</p>
                 </div>
             `;
             if (cartTotalElement) cartTotalElement.textContent = '0';
@@ -169,20 +185,23 @@ class ShoppingCart {
         cartItemsContainer.innerHTML = this.items.map(item => {
             const itemTotal = item.price * item.quantity;
             total += itemTotal;
+            const itemType = item.type === 'plan' ? '📋 Plan' : '🛍️ Producto';
+            const itemId = item.id || item.plan || item.product;
             
             return `
-                <div class="cart-item" data-id="${item.id}">
+                <div class="cart-item" data-id="${itemId}">
                     <div class="item-info">
+                        <span class="item-type">${itemType}</span>
                         <h4>${item.name}</h4>
-                        <p class="item-price">$${item.price}/mes</p>
+                        <p class="item-price">$${item.price}${item.type === 'plan' ? '/mes' : ''}</p>
                     </div>
                     <div class="item-controls">
-                        <button class="quantity-btn" onclick="cart.updateQuantity(${item.id}, ${item.quantity - 1})">-</button>
+                        <button class="quantity-btn" onclick="cart.updateQuantity('${itemId}', ${item.quantity - 1})">-</button>
                         <span class="quantity">${item.quantity}</span>
-                        <button class="quantity-btn" onclick="cart.updateQuantity(${item.id}, ${item.quantity + 1})">+</button>
-                        <button class="remove-btn" onclick="cart.removeFromCart(${item.id})">🗑️</button>
+                        <button class="quantity-btn" onclick="cart.updateQuantity('${itemId}', ${item.quantity + 1})">+</button>
+                        <button class="remove-btn" onclick="cart.removeFromCart('${itemId}')">🗑️</button>
                     </div>
-                    <div class="item-total">$${itemTotal}</div>
+                    <div class="item-total">$${itemTotal.toFixed(2)}</div>
                 </div>
             `;
         }).join('');

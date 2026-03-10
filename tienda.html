@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda - FitZone</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Encabezado -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1><a href="index.html" style="color: #2c5aa0; text-decoration: none;">FitZone</a></h1>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html#inicio">Inicio</a></li>
+                    <li><a href="planes.html">Planes</a></li>
+                    <li><a href="ejercicios.html">Ejercicios</a></li>
+                    <li><a href="tienda.html">Tienda</a></li>
+                    <li><a href="galeria.html">Galería</a></li>
+                    <li><a href="index.html#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <div class="cart-container">
+                    <button id="cartBtn" class="cart-btn">
+                        🛒 <span id="cartCount">0</span>
+                    </button>
+                </div>
+                <a href="login.html" class="btn-secondary">Iniciar Sesión</a>
+                <a href="register.html" class="btn-primary">Registrarse</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección de Tienda -->
+    <section class="shop-section">
+        <div class="container">
+            <div class="shop-header">
+                <h1>Tienda FitZone</h1>
+                <p>Productos de calidad para potenciar tu entrenamiento</p>
+            </div>
+
+            <!-- Filtros de Productos -->
+            <div class="shop-filters">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="supplements">Suplementos</button>
+                <button class="filter-btn" data-filter="accessories">Accesorios</button>
+                <button class="filter-btn" data-filter="equipment">Equipamiento</button>
+            </div>
+
+            <!-- Grid de Productos -->
+            <div class="products-grid">
+                <!-- Suplementos -->
+                <div class="product-card" data-category="supplements">
+                    <div class="product-image">
+                        <img src="https://cdn.pixabay.com/photo/2017/05/12/08/29/coffee-2306471_1280.jpg" alt="Proteína Whey">
+                        <span class="product-badge">Más Vendido</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Proteína Whey Premium</h3>
+                        <p class="product-description">Proteína de suero de alta calidad, 25g por porción</p>
+                        <div class="product-price">$45.99</div>
+                        <button class="btn-cart" data-product="whey-protein" data-price="45.99" data-name="Proteína Whey Premium" data-type="product">
+                            Agregar al Carrito
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="supplements">
+                    <div class="product-image">
+                        <img src="https://cdn.pixabay.com/photo/2017/03/27/13/54/bread-2178874_1280.jpg" alt="Creatina">
+                    </div>
+                    <div class="product-info">
+                        <h3>Creatina Monohidrato</h3>
+                        <p class="product-description">Aumenta fuerza y rendimiento, 300g</p>
+                        <div class="product-price">$29.99</div>
+                        <button class="btn-cart" data-product="creatine" data-price="29.99" data-name="Creatina Monohidrato" data-type="product">
+                            Agregar al Carrito
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="supplements">
+                    <div class="product-image">
+                        <img src="https://cdn.pixabay.com/photo/2016/03/02/20/13/grocery-1232944_1280.jpg" alt="BCAA">
+                    </div>
+                    <div class="product-info">
+                        <h3>BCAA 2:1:1</h3>
+                        <p class="product-description">Aminoácidos esenciales para recuperación</p>
+                        <div class="product-price">$34.99</div>
+                        <button class="btn-cart" data-product="bcaa" data-price="34.99" data-name="BCAA 2:1:1" data-type="product">
+                            Agregar al Carrito
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="supplements">
+                    <div class="product-image">
+                        <img src="https://cdn.pixabay.com/photo/2017/08/06/12/19/people-2590524_1280.jpg" alt="Pre-Workout">
+                        <span class="product-badge new">Nuevo</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Pre-Workout Energía</h3>
+                        <p class="product-description">Máxima energía y concentración</p>
+                        <div class="product-price">$39.99</div>
+                        <button class="btn-cart" data-product="preworkout" data-price="39.99" data-name="Pre-Workout Energía" data-type="product">
+                            Agregar al Carrito
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Accesorios -->
+                <div class="product-card" data-category="accessories">
+                    <div class="product-image">
+                        <img src="https://cdn.pixabay.com/photo/2017/07/02/19/24/dumbbells-2465478_1280.jpg" alt="Guantes">
+                    </div>
+                    <div class="product-info">
+                        <h3>Guantes de Entrenamiento</h3>
+                        <p class="product-description">Protección y agarre superior</p>
+                        <div class="product-price">$19.99</div>
+                        <button class="btn-cart" data-product="gloves" data-price="19.99" data-name="Guantes de Entrenamiento" data-type="product">
+                            Agregar al Carrito
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="accessories">
+                    <div class="product-image">
+                        <img src="https://cdn.pixabay.com/photo/2016/11/19/12/43/barbell-1839086_1280.jpg" alt="Cinturón">
+                    </div>
+                    <div class="product-info">
+                        <h3>Cinturón Lumbar</h3>
+                        <p class="product-description">Soporte para levantamiento pesado</p>
+                        <div class="product-price">$49.99</div>
+                        <button class="btn-cart" data-product="belt" data-price="49.99" data-name="Cinturón Lumbar" data-type="product">
+                            Agregar al Carrito
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="accessories">
+                    <div class="product-image">
+                        <img src="https://cdn.pixabay.com/photo/2017/08/07/14/02/man-2604149_1280.jpg" alt="Straps">
+                    </div>
+                    <div class="product-info">
+                        <h3>Straps de Agarre</h3>
+                        <p class="product-description">Mejora tu agarre en ejercicios de tracción</p>
+                        <div class="product-price">$14.99</div>
+                        <button class="btn-cart" data-product="straps" data-price="14.99" data-name="Straps de Agarre" data-type="product">
+                            Agregar al Carrito
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="accessories">
+                    <div class="product-image">
+                        <img src="https://cdn.pixabay.com/photo/2016/11/29/02/05/audience-1866738_1280.jpg" alt="Shaker">
+                    </div>
+                    <div class="product-info">
+                        <h3>Shaker Premium</h3>
+                        <p class="product-description">Botella mezcladora 700ml</p>
+                        <div class="product-price">$12.99</div>
+                        <button class="btn-cart" data-product="shaker" data-price="12.99" data-name="Shaker Premium" data-type="product">
+                            Agregar al Carrito
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Equipamiento -->
+                <div class="product-card" data-category="equipment">
+                    <div class="product-image">
+                        <img src="https://cdn.pixabay.com/photo/2017/07/02/19/24/dumbbells-2465478_1280.jpg" alt="Mancuernas">
+                    </div>
+                    <div class="product-info">
+                        <h3>Set Mancuernas Ajustables</h3>
+                        <p class="product-description">5-25kg, ahorra espacio</p>
+                        <div class="product-price">$199.99</div>
+                        <button class="btn-cart" data-product="dumbbells" data-price="199.99" data-name="Set Mancuernas Ajustables" data-type="product">
+                            Agregar al Carrito
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="equipment">
+                    <div class="product-image">
+                        <img src="https://cdn.pixabay.com/photo/2016/11/19/12/43/yoga-1839820_1280.jpg" alt="Colchoneta">
+                    </div>
+                    <div class="product-info">
+                        <h3>Colchoneta Yoga Premium</h3>
+                        <p class="product-description">Antideslizante, 6mm grosor</p>
+                        <div class="product-price">$34.99</div>
+                        <button class="btn-cart" data-product="mat" data-price="34.99" data-name="Colchoneta Yoga Premium" data-type="product">
+                            Agregar al Carrito
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="equipment">
+                    <div class="product-image">
+                        <img src="https://cdn.pixabay.com/photo/2017/08/07/14/02/people-2604149_1280.jpg" alt="Bandas">
+                    </div>
+                    <div class="product-info">
+                        <h3>Bandas de Resistencia</h3>
+                        <p class="product-description">Set de 5 niveles de resistencia</p>
+                        <div class="product-price">$24.99</div>
+                        <button class="btn-cart" data-product="bands" data-price="24.99" data-name="Bandas de Resistencia" data-type="product">
+                            Agregar al Carrito
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="equipment">
+                    <div class="product-image">
+                        <img src="https://cdn.pixabay.com/photo/2016/11/19/12/43/barbell-1839086_1280.jpg" alt="Kettlebell">
+                    </div>
+                    <div class="product-info">
+                        <h3>Kettlebell 16kg</h3>
+                        <p class="product-description">Hierro fundido, agarre ergonómico</p>
+                        <div class="product-price">$54.99</div>
+                        <button class="btn-cart" data-product="kettlebell" data-price="54.99" data-name="Kettlebell 16kg" data-type="product">
+                            Agregar al Carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>FitZone</h3>
+                    <p>Tu gimnasio de confianza desde 2020</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p>📍 Calle Principal 123</p>
+                    <p>📞 (555) 123-4567</p>
+                    <p>✉️ info@fitzone.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="#">Facebook</a>
+                        <a href="#">Instagram</a>
+                        <a href="#">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 FitZone. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal del Carrito -->
+    <div id="cartModal" class="cart-modal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3>Carrito de Compras</h3>
+                <span class="cart-close">&times;</span>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <!-- Los items se agregan dinámicamente -->
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <strong>Total: $<span id="cartTotal">0</span></strong>
+                </div>
+                <div class="cart-actions">
+                    <button class="btn-secondary" id="clearCart">Limpiar Carrito</button>
+                    <button class="btn-primary" id="checkout">Proceder al Pago</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="cart.js"></script>
+    <script src="shop.js"></script>
+    <script src="auth.js"></script>
+</body>
+</html>

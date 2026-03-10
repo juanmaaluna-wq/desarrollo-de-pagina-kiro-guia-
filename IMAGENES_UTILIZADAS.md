@@ -102,6 +102,49 @@ Este documento lista todas las imágenes utilizadas en el proyecto, optimizadas 
 1. **Clase de Yoga**
    - **URL**: `https://cdn.pixabay.com/photo/2016/11/19/12/43/yoga-1839820_1280.jpg`
    - **Categoría**: classes filter
+   - **Descripción**: Sesión de yoga grupal con instructor
+
+2. **Spinning**
+   - **URL**: `https://cdn.pixabay.com/photo/2016/11/18/17/20/group-fitness-1837013_1280.jpg`
+   - **Categoría**: classes filter
+   - **Descripción**: Clase de spinning con bicicletas estáticas
+
+3. **Zumba**
+   - **URL**: `https://cdn.pixabay.com/photo/2016/11/19/12/43/fitness-1839805_1280.jpg`
+   - **Categoría**: classes filter
+   - **Descripción**: Clase de baile fitness Zumba
+
+**Instalaciones:**
+1. **Vestuarios**
+   - **URL**: `https://cdn.pixabay.com/photo/2016/11/19/12/43/locker-room-1839298_1280.jpg`
+   - **Categoría**: facilities filter
+   - **Descripción**: Vestuarios modernos con casilleros
+
+2. **Área de Relajación**
+   - **URL**: `https://cdn.pixabay.com/photo/2017/03/28/12/11/chairs-2181947_1280.jpg`
+   - **Categoría**: facilities filter
+   - **Descripción**: Zona de descanso post-entrenamiento
+
+3. **Recepción**
+   - **URL**: `https://cdn.pixabay.com/photo/2016/11/18/14/05/brick-wall-1834784_1280.jpg`
+   - **Categoría**: facilities filter
+   - **Descripción**: Área de recepción y atención al cliente
+
+**Eventos:**
+1. **Competencia Fitness**
+   - **URL**: `https://cdn.pixabay.com/photo/2017/08/07/14/02/man-2604149_1280.jpg`
+   - **Categoría**: events filter
+   - **Descripción**: Competencias y desafíos fitness
+
+2. **Taller Nutricional**
+   - **URL**: `https://cdn.pixabay.com/photo/2017/05/11/19/44/fresh-2305192_1280.jpg`
+   - **Categoría**: events filter
+   - **Descripción**: Talleres de nutrición saludable
+
+3. **Celebración Aniversario**
+   - **URL**: `https://cdn.pixabay.com/photo/2016/11/29/03/53/athletes-1867185_1280.jpg`
+   - **Categoría**: events filter
+   - **Descripción**: Eventos especiales y celebraciones
 
 ### **Páginas de Autenticación**
 

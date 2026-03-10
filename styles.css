@@ -796,18 +796,6 @@ body {
     transform: scale(1.08);
 }
 
-.placeholder-image {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #2c5aa0, #1e3f73);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-
 .gallery-overlay {
     position: absolute;
     bottom: 0;
@@ -825,12 +813,16 @@ body {
 }
 
 .gallery-overlay h3 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin-bottom: 0.5rem;
+    color: white;
 }
 
 .gallery-overlay p {
-    font-size: 1rem;
+    font-size: 0.9rem;
+    opacity: 0.9;
+    line-height: 1.4;
+}
     opacity: 0.9;
 }
 
@@ -1560,5 +1552,476 @@ html {
     
     .plan-image-large {
         height: 160px;
+    }
+}
+
+/* Estilos para la Tienda */
+.shop-section {
+    padding: 8rem 0 5rem;
+    background: #f8f9fa;
+}
+
+.shop-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.shop-header h1 {
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.shop-header p {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.shop-filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.product-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.product-image {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.05);
+}
+
+.product-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #ff6b35;
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    z-index: 2;
+}
+
+.product-badge.new {
+    background: #28a745;
+}
+
+.product-info {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.product-info h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+    min-height: 2.4rem;
+}
+
+.product-description {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+    flex: 1;
+}
+
+.product-price {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #2c5aa0;
+    margin-bottom: 1rem;
+}
+
+.product-info .btn-cart {
+    width: 100%;
+    margin: 0;
+    padding: 0.75rem;
+    font-size: 0.95rem;
+}
+
+/* Responsive para tienda */
+@media (max-width: 768px) {
+    .shop-header h1 {
+        font-size: 2rem;
+    }
+    
+    .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .product-image {
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .product-card {
+        max-width: 100%;
+    }
+}
+
+/* Estilos para menú de usuario */
+.user-menu {
+    position: relative;
+    margin-right: 1rem;
+}
+
+.user-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #2c5aa0;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.25rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.user-btn:hover {
+    background: #1e3f73;
+    transform: translateY(-2px);
+}
+
+.user-icon {
+    font-size: 1.2rem;
+}
+
+.user-name {
+    font-size: 0.95rem;
+}
+
+.user-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 0.5rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s;
+    z-index: 1000;
+}
+
+.user-dropdown.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-item {
+    display: block;
+    padding: 0.75rem 1.25rem;
+    color: #333;
+    text-decoration: none;
+    transition: background 0.3s;
+    font-size: 0.95rem;
+}
+
+.dropdown-item:first-child {
+    border-radius: 10px 10px 0 0;
+}
+
+.dropdown-item:last-child {
+    border-radius: 0 0 10px 10px;
+}
+
+.dropdown-item:hover {
+    background: #f8f9fa;
+    color: #2c5aa0;
+}
+
+.user-dropdown hr {
+    margin: 0.5rem 0;
+    border: none;
+    border-top: 1px solid #eee;
+}
+
+#logoutBtn {
+    color: #dc3545;
+}
+
+#logoutBtn:hover {
+    background: #fff5f5;
+}
+
+/* Responsive para menú de usuario */
+@media (max-width: 768px) {
+    .user-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .user-name {
+        display: none;
+    }
+    
+    .user-icon {
+        font-size: 1.5rem;
+    }
+    
+    .user-dropdown {
+        right: -10px;
+    }
+}
+
+
+/* ===================================
+   SECCIÓN DE EJERCICIOS
+   =================================== */
+
+.exercises-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.exercises-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.exercises-header h1 {
+    font-size: 2.5rem;
+    color: #2c5aa0;
+    margin-bottom: 15px;
+}
+
+.exercises-header p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.exercise-filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.exercises-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.exercise-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.exercise-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.exercise-image {
+    position: relative;
+    height: 240px;
+    overflow: hidden;
+}
+
+.exercise-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+}
+
+.exercise-card:hover .exercise-image img {
+    transform: scale(1.1);
+}
+
+.level-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.level-badge.beginner {
+    background: #4caf50;
+    color: white;
+}
+
+.level-badge.intermediate {
+    background: #ff9800;
+    color: white;
+}
+
+.level-badge.advanced {
+    background: #f44336;
+    color: white;
+}
+
+.exercise-info {
+    padding: 25px;
+}
+
+.exercise-info h3 {
+    font-size: 1.4rem;
+    color: #2c5aa0;
+    margin-bottom: 12px;
+}
+
+.exercise-description {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+
+.exercise-details {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.detail-item {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 14px;
+    background: #f5f7fa;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: #555;
+    font-weight: 500;
+}
+
+/* ===================================
+   SECCIÓN DE CONSEJOS
+   =================================== */
+
+.tips-section {
+    padding: 80px 0;
+    background: white;
+}
+
+.tips-section h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #2c5aa0;
+    margin-bottom: 50px;
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.tip-card {
+    text-align: center;
+    padding: 40px 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 12px;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.tip-card:hover {
+    transform: translateY(-5px);
+}
+
+.tip-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.tip-card h4 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.tip-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    opacity: 0.95;
+}
+
+/* Responsive para ejercicios */
+@media (max-width: 768px) {
+    .exercises-header h1 {
+        font-size: 2rem;
+    }
+
+    .exercises-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .exercise-filters {
+        gap: 10px;
+    }
+
+    .tips-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
 }
